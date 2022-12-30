@@ -49,6 +49,7 @@ function encriptar(){
 
 function astring(textoencriptado){
     encriptado = textoencriptado.join("");
+    console.log(encriptado);
 }
 
 benc.onclick = Funcionvalidar;

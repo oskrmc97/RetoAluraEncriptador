@@ -47,6 +47,8 @@ function encriptar(){
 
     astring(textoencriptado);
     textoencriptado = [];
+    document.getElementById("inputarea").value = "";
+
 }
 
 function astring(textoencriptado){
@@ -97,6 +99,7 @@ function desencriptar(){
 
     astring(textodesencriptado);
     textodesencriptado = [];
+    document.getElementById("inputarea").value = "";
     
 }
 benc.onclick = Funcionvalidar;

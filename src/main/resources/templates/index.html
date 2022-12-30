@@ -16,13 +16,13 @@
         <button class = "boton" id = "benc"> Encriptar</button>
         <button class = "boton2" id = "bdes">Desencriptar</button>
     </div>
-    <div class = "recuadro"> 
+    <div class = "recuadro" id = "textoencriptado"> 
         <img th:src = "@{/img/Muñeco.png}" class="muñeco">
         <p class = "submensaje">Ingresa el texto que desees encriptar o desencriptar.</p>
+        <div class="recuadropequeño" id = "botoncopiar">
+            <h2 id = "mensaje">Ningún mensaje fue <br>encontrado</h2>
+        </div>
     </div> 
-    <div class="recuadropequeño">
-    <h2 id = "mensaje">Ningún mensaje fue <br>encontrado</h2>
-    </div>
     <script th:src= "@{/js/Encriptador.js}"></script>
 </body>
 </html>

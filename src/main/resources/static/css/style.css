@@ -222,8 +222,8 @@ body{
     position: relative;
     width: 336px;
     height: 122px;
-    left: 1032px;
-    top: 450px;
+    left: 40px;
+    top: 400px;
 
 }
 
@@ -282,3 +282,55 @@ body{
     align-self: stretch;
     flex-grow: 0;
 }
+
+#textico{
+    position: absolute;
+    width: 336px;
+    height: 781px;
+    left: 20px;
+    top: 20px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    word-break:break-all;
+    /* or 36px */
+    
+    
+    /* Gray/gray-400 */
+    
+    color: #495057;
+}
+
+#copiar{
+    
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+
+    position: absolute;
+    width: 336px;
+    height: 67px;
+    left: 30px;
+    top: 550px;
+
+    /* Dark blue/dark-blue-300 */
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+ }

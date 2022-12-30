@@ -49,7 +49,11 @@ function encriptar(){
 
 function astring(textoencriptado){
     encriptado = textoencriptado.join("");
-    console.log(encriptado);
+    document.getElementById("textoencriptado").innerHTML ="<p id ='textico'>"+encriptado+"</p>"+"<button id ='copiar'>copiar</button>";
+}
+
+function copiartexto(){
+    
 }
 
 benc.onclick = Funcionvalidar;

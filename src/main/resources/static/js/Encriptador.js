@@ -11,9 +11,11 @@ let areatexto = document.querySelector("#inputarea");
 areatexto.focus();
 areatexto.select();
 let benc = document.querySelector("#benc");
-let dsec = document.querySelector("#bdes");
+let bdesencriptar = document.querySelector("#bdes");
 let textoplano;
+let textoplanoencriptado; 
 let textoencriptado = [];
+let textodesencriptado = [];
 let encriptado;
 
 function Funcionvalidar(){
@@ -49,13 +51,54 @@ function encriptar(){
 
 function astring(textoencriptado){
     encriptado = textoencriptado.join("");
-    document.getElementById("textoencriptado").innerHTML ="<p id ='textico'>"+encriptado+"</p>"+"<button id ='copiar'>copiar</button>";
+    document.getElementById("textoencriptado").innerHTML ="<textarea id ='textico' readonly='true'>"+encriptado+"</textarea>"+"<button id ='copiar'>copiar</button>";
+    copiartexto();
 }
 
 function copiartexto(){
-    
+    let botonCopiar = document.querySelector("#copiar");
+    let Texto = document.querySelector("#textico");
+    botonCopiar.addEventListener("click", function(event) {   
+        // el método select es utilizado para seleccionar el contenido del campo de texto
+          Texto.select();
+       try {
+            // el método document.execCommand("copy") copia el texto seleccionado al portapapeles
+            let exito = document.execCommand("copy");// devuelve true o false
+            let msg = exito ? "\351xito" : "error";
+            console.log(msg);
+            areatexto.focus();
+            areatexto.select();
+      } catch (error) {
+            let err = error;
+            console.log("No fue posible copiar el texto seleccionado!");
+          }
+        }); 
 }
 
-benc.onclick = Funcionvalidar;
+function desencriptar(){
+    textoplanoencriptado = areatexto.value;
+    for(let i = 0; i < textoplanoencriptado.length; i++){
 
+        textodesencriptado.push(textoplano[i]);
+
+        if(textoplanoencriptado[i] == "ai"){
+            textodesencriptado[i] = "a";
+        }
+        else if(textoplanoencriptado[i] == "enter")
+            textodesencriptado[i] = "e";
+        else if(textoplanoencriptado[i] == "imes")
+            textodesencriptado[i] = "i";
+        else if(textoplanoencriptado[i]=="ober")
+            textodesencriptado[i] = "o";
+        else if(textoplanoencriptado[i] == "ufat")
+            textodesencriptado[i] = "u";
+        
+    }
+
+    astring(textodesencriptado);
+    textodesencriptado = [];
+    
+}
+benc.onclick = Funcionvalidar;
+bdesencriptar.onclick = desencriptar;
 

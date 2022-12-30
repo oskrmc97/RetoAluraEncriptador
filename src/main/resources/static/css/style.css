@@ -286,7 +286,7 @@ body{
 #textico{
     position: absolute;
     width: 336px;
-    height: 781px;
+    height: 500px;
     left: 20px;
     top: 20px;
     
@@ -302,6 +302,7 @@ body{
     /* Gray/gray-400 */
     
     color: #495057;
+    border: none;
 }
 
 #copiar{

@@ -18,11 +18,16 @@ let textoencriptado = [];
 let textodesencriptado = [];
 let encriptado;
 
-function Funcionvalidar(){
+function FuncionvalidarEncriptado(){
     textoplano = areatexto.value;
     if(!/[^a-z\sñ]/.test(textoplano))
         encriptar();
-    
+}
+
+function FuncionvalidardesEncriptado(){
+    textoplano = areatexto.value;
+    if(!/[^a-z\sñ]/.test(textoplano))
+        desencriptar();
 }
 
 function encriptar(){
@@ -79,29 +84,12 @@ function copiartexto(){
 
 function desencriptar(){
     textoplanoencriptado = areatexto.value;
-    for(let i = 0; i < textoplanoencriptado.length; i++){
-
-        textodesencriptado.push(textoplano[i]);
-
-        if(textoplanoencriptado[i] == "ai"){
-            textodesencriptado[i] = "a";
-        }
-        else if(textoplanoencriptado[i] == "enter")
-            textodesencriptado[i] = "e";
-        else if(textoplanoencriptado[i] == "imes")
-            textodesencriptado[i] = "i";
-        else if(textoplanoencriptado[i]=="ober")
-            textodesencriptado[i] = "o";
-        else if(textoplanoencriptado[i] == "ufat")
-            textodesencriptado[i] = "u";
-        
-    }
-
-    astring(textodesencriptado);
-    textodesencriptado = [];
-    document.getElementById("inputarea").value = "";
-    
+    let textofinal = textoplanoencriptado.replaceAll("ai","a").replaceAll("enter","e").replaceAll("imes","i").replaceAll("ober","o").replaceAll("ufat","u");
+    document.getElementById("textoencriptado").innerHTML ="<textarea id ='textico' readonly='true'>"+textofinal+"</textarea>"+"<button id ='copiar'>copiar</button>";
+    copiartexto();
 }
-benc.onclick = Funcionvalidar;
-bdesencriptar.onclick = desencriptar;
+
+benc.onclick = FuncionvalidarEncriptado;
+bdesencriptar.onclick = FuncionvalidardesEncriptado;
+
 

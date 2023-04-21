@@ -1,13 +1,13 @@
-package com.alura.paginaropa;
+package com.alura.Encriptador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PaginaropaApplication {
+public class Encriptador {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PaginaropaApplication.class, args);
+		SpringApplication.run(Encriptador.class, args);
 	}
 
 }
